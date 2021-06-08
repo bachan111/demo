@@ -23,6 +23,18 @@ android {
         }
     }
 
+    // 自定义输出配置
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "demo_v${variant.versionName}_${variant.name}.apk"
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
 }
 
 dependencies {
@@ -34,6 +46,20 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation project(path: ':httpserver')
+//    implementation project(path: ':httpserver')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    //ConverterFactory的Gson依赖包
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    //CallAdapterFactory的Rx依赖包
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    //cookie管理
+//    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    //日志
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
 }

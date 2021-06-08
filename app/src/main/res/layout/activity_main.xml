@@ -4,15 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/aaaaaa"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-
+    <TextView
+        android:id="@+id/mLabel"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@mipmap/b" />
+        android:background="#C3BDB3" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:onClick="mNetwork"
+        android:text="接口请求" />
 
 </LinearLayout>
