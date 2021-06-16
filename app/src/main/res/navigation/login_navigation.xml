@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/destination"
+    app:startDestination="@id/loginFragment">
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cbf.demo.jetpack.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_welcome"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.cbf.demo.jetpack.WelcomeFragment"
+        android:label="WelcomeFragment">
+        <action
+            android:id="@+id/action_login"
+            app:popUpTo="@id/loginFragment" />
+        <action
+            android:id="@+id/action_register"
+            app:destination="@id/registerFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.cbf.demo.jetpack.RegisterFragment"
+        android:label="registerFragment"/>
+
+</navigation>
