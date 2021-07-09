@@ -37,6 +37,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
 
+    //导入dataBinding支持
+    dataBinding {
+        enabled true
+    }
+
 }
 def lifecycle_version = "2.2.0"
 dependencies {

@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LauncherTheme" parent="Theme.Design.NoActionBar">
+        <item name="android:windowBackground">@drawable/psych_luncher_bg</item>
+    </style>
+
     <style name="style_keyboard_tv2">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>

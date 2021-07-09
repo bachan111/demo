@@ -3,15 +3,17 @@ package com.cbf.demo.jetpack;
 import android.os.Bundle;
 
 import com.cbf.demo.R;
+import com.cbf.demo.databinding.ActivityLoginBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private ActivityLoginBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_login);
     }
 
     /**
