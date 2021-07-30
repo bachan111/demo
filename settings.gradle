@@ -1,3 +1,5 @@
 rootProject.name='Demo'
 include ':app'
 include ':lib-retrofit2'
+include ':lib-rxjava'
+include ':lib-base'
