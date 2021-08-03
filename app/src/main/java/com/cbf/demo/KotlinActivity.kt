@@ -28,5 +28,9 @@ class KotlinActivity : AppCompatActivity() {
 
         }
     }
+    
+    fun funTest(valueInt:Int,valueStr:String):String{
+        return ""
+    }
 
 }
