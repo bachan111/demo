@@ -194,3 +194,35 @@ List<String> list1 = new ArrayList<>();
             }
         });
 ```
+
+## 3. Scheduler
+
+简介：在不指定线程的情况下， RxJava 遵循的是线程不变的原则，即：在哪个线程调用 subscribe()，就在哪个线程生产事件；在哪个线程生产事件，就在哪个线程消费事件。如果需要切换线程，就需要用到 Scheduler （调度器）。
+   在RxJava 中，Scheduler，相当于线程控制器，RxJava 通过它来指定每一段代码应该运行在什么样的线程。RxJava 已经内置了几个 Scheduler ，它们已经适合大多数的使用场景。
+
+1. Schedulers.immediate() ：直接在当前线程运行，相当于不指定线程。这是默认的 Scheduler。
+2. Schedulers.newThread() ：总是启用新线程，并在新线程执行操作。
+3. Schedulers.io() ：I/O 操作（读写文件、读写数据库、网络信息交互等）所使用的 Scheduler。行为模式和 newThread() 差不多，
+区别在于 io() 的内部实现是用一个无数量上限的线程池，可以重用空闲的线程，因此多数情况下 io() 比 newThread() 更有效率。不要把计算工作放在 io() 中，可以避免创建不必要的线程。
+
+subscribeOn(): 指定Observable(被观察者)所在的线程，或者叫做事件产生的线程。
+observeOn(): 指定 Observer(观察者)所运行在的线程，或者叫做事件消费的线程。
+```
+ Observable.create(new ObservableOnSubscribe<Integer>() {
+            @Override
+            public void subscribe(@org.jetbrains.annotations.NotNull ObservableEmitter<Integer> e) throws Exception {
+                Log.d("所在的线程：", Thread.currentThread().getName());
+                Log.d("发送的数据:", 1 + "");
+                e.onNext(1);
+            }
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<Integer>() {
+                    @Override
+                    public void accept(@org.jetbrains.annotations.NotNull Integer integer) throws Exception {
+                        Log.d("所在的线程：", Thread.currentThread().getName());
+                        Log.d("接收到的数据:", "integer:" + integer);
+                    }
+                });
+```
+
