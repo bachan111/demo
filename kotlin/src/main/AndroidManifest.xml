@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Demo">
+        <activity android:name=".jetpack.ViewModelActivity"></activity>
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="com.bachan.kotlin.secondActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.bachan.kotlin.secondActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
