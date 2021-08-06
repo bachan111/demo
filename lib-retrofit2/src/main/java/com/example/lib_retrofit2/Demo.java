@@ -18,16 +18,16 @@ public class Demo {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         Api api = retrofit.create(Api.class);
-        Call<Resopnse> bodyCall = api.post3(new HashMap<>());
-        bodyCall.enqueue(new Callback<Resopnse>() {
+        Call<Object> bodyCall = api.post3(new HashMap<>());
+        bodyCall.enqueue(new Callback<Object>() {
             @Override
-            public void onResponse(Call<Resopnse> call, Response<Resopnse> response) {
-                Resopnse res = response.body();
-                Toast.makeText(this,res.toString(),Toast.LENGTH_LONG).show();
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                Resopnse res = (Resopnse) response.body();
+//                Toast.makeText(this,res.toString(),Toast.LENGTH_LONG).show();
             }
 
             @Override
-            public void onFailure(Call<Resopnse> call, Throwable t) {
+            public void onFailure(Call<Object> call, Throwable t) {
 
             }
         });

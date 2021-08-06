@@ -20,8 +20,8 @@ public interface Api {
     /**
      * 无参数
      */
-    @GET("user")
-    Call<Response> getData;
+//    @GET("user")
+//    Call<Response> getData;
 
     /**
      * dec:  添加参数在方法括号内添加@Query,后面是参数类型和参数字段，表示后面idValue的取值作为"id"的值，
@@ -29,8 +29,6 @@ public interface Api {
      * 比如：baseUrl为https://api.github.com/，那么拼接网络接口注解中的地址后变为：https://api.github.com/user，
      * 我们需要传入的id=10006，name="刘亦菲"，那么拼接参数后就是完整的请求地址：https://api.github.com/user?id=10006&name=刘亦菲。
      *
-     * @param id
-     * @param name
      * @return
      */
     @GET("user")
