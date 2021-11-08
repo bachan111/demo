@@ -17,6 +17,7 @@ import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
 
 public interface Api {
+    void listRepos(String user);
     /**
      * 无参数
      */

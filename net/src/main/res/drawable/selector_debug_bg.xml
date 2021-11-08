@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+   <item android:drawable="@drawable/shape_corner_even_color" android:state_focused="false"/>
+    <item android:drawable="@drawable/shape_corner_even_color_ffeb3b_stroke" android:state_focused="true"/>
+</selector>

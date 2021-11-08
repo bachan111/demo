@@ -4,5 +4,5 @@ import retrofit2.http.GET;
 
 public interface Itest {
     @GET("/AAA")
-    public void add(int a);
+    public void add(int i, int a);
 }

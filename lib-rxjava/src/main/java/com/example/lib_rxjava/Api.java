@@ -8,4 +8,6 @@ import retrofit2.http.Query;
 public interface Api {
     @GET("citys")
     Observable<AllCity> getAllCity(@Query("key") String key);
+
+    Observable<String> listRepos(String user);
 }

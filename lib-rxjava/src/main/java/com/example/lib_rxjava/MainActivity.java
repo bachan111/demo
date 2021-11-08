@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Retrofit retrofit = create("http://v.juhe.cn/weather/");
         Api api = retrofit.create(Api.class);
+
         Observable<AllCity> observable = api.getAllCity("北京");
         observable
                 .subscribeOn(Schedulers.io())

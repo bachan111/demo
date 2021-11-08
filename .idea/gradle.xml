@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/lib-net" />
             <option value="$PROJECT_DIR$/lib-retrofit2" />
             <option value="$PROJECT_DIR$/lib-rxjava" />
+            <option value="$PROJECT_DIR$/okhttp" />
             <option value="$PROJECT_DIR$/pattern" />
             <option value="$PROJECT_DIR$/retrofit2" />
           </set>

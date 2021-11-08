@@ -2,6 +2,8 @@ package com.example.lib_retrofit2;
 
 import android.widget.Toast;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import java.util.HashMap;
 
 import okhttp3.ResponseBody;
@@ -16,8 +18,12 @@ public class Demo {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("url")
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();
         Api api = retrofit.create(Api.class);
+        api.listRepos("user");
+
+
         Call<Object> bodyCall = api.post3(new HashMap<>());
         bodyCall.enqueue(new Callback<Object>() {
             @Override
